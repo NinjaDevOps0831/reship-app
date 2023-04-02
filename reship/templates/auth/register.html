@@ -1,0 +1,634 @@
+{% load widget_tweaks %} {% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Signup</title>
+    <style type="text/css">
+      svg:not(:root).svg-inline--fa {
+        overflow: visible;
+      }
+      .svg-inline--fa {
+        display: inline-block;
+        font-size: inherit;
+        height: 1em;
+        overflow: visible;
+        vertical-align: -0.125em;
+      }
+      .svg-inline--fa.fa-lg {
+        vertical-align: -0.225em;
+      }
+      .svg-inline--fa.fa-w-1 {
+        width: 0.0625em;
+      }
+      .svg-inline--fa.fa-w-2 {
+        width: 0.125em;
+      }
+      .svg-inline--fa.fa-w-3 {
+        width: 0.1875em;
+      }
+      .svg-inline--fa.fa-w-4 {
+        width: 0.25em;
+      }
+      .svg-inline--fa.fa-w-5 {
+        width: 0.3125em;
+      }
+      .svg-inline--fa.fa-w-6 {
+        width: 0.375em;
+      }
+      .svg-inline--fa.fa-w-7 {
+        width: 0.4375em;
+      }
+      .svg-inline--fa.fa-w-8 {
+        width: 0.5em;
+      }
+      .svg-inline--fa.fa-w-9 {
+        width: 0.5625em;
+      }
+      .svg-inline--fa.fa-w-10 {
+        width: 0.625em;
+      }
+      .svg-inline--fa.fa-w-11 {
+        width: 0.6875em;
+      }
+      .svg-inline--fa.fa-w-12 {
+        width: 0.75em;
+      }
+      .svg-inline--fa.fa-w-13 {
+        width: 0.8125em;
+      }
+      .svg-inline--fa.fa-w-14 {
+        width: 0.875em;
+      }
+      .svg-inline--fa.fa-w-15 {
+        width: 0.9375em;
+      }
+      .svg-inline--fa.fa-w-16 {
+        width: 1em;
+      }
+      .svg-inline--fa.fa-w-17 {
+        width: 1.0625em;
+      }
+      .svg-inline--fa.fa-w-18 {
+        width: 1.125em;
+      }
+      .svg-inline--fa.fa-w-19 {
+        width: 1.1875em;
+      }
+      .svg-inline--fa.fa-w-20 {
+        width: 1.25em;
+      }
+      .svg-inline--fa.fa-pull-left {
+        margin-right: 0.3em;
+        width: auto;
+      }
+      .svg-inline--fa.fa-pull-right {
+        margin-left: 0.3em;
+        width: auto;
+      }
+      .svg-inline--fa.fa-border {
+        height: 1.5em;
+      }
+      .svg-inline--fa.fa-li {
+        width: 2em;
+      }
+      .svg-inline--fa.fa-fw {
+        width: 1.25em;
+      }
+      .fa-layers svg.svg-inline--fa {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .fa-layers {
+        display: inline-block;
+        height: 1em;
+        position: relative;
+        text-align: center;
+        vertical-align: -0.125em;
+        width: 1em;
+      }
+      .fa-layers svg.svg-inline--fa {
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+      }
+      .fa-layers-counter,
+      .fa-layers-text {
+        display: inline-block;
+        position: absolute;
+        text-align: center;
+      }
+      .fa-layers-text {
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+      }
+      .fa-layers-counter {
+        background-color: #ff253a;
+        border-radius: 1em;
+        color: #fff;
+        height: 1.5em;
+        line-height: 1;
+        max-width: 5em;
+        min-width: 1.5em;
+        overflow: hidden;
+        padding: 0.25em;
+        right: 0;
+        text-overflow: ellipsis;
+        top: 0;
+        -webkit-transform: scale(0.25);
+        transform: scale(0.25);
+        -webkit-transform-origin: top right;
+        transform-origin: top right;
+      }
+      .fa-layers-bottom-right {
+        bottom: 0;
+        right: 0;
+        top: auto;
+        -webkit-transform: scale(0.25);
+        transform: scale(0.25);
+        -webkit-transform-origin: bottom right;
+        transform-origin: bottom right;
+      }
+      .fa-layers-bottom-left {
+        bottom: 0;
+        left: 0;
+        right: auto;
+        top: auto;
+        -webkit-transform: scale(0.25);
+        transform: scale(0.25);
+        -webkit-transform-origin: bottom left;
+        transform-origin: bottom left;
+      }
+      .fa-layers-top-right {
+        right: 0;
+        top: 0;
+        -webkit-transform: scale(0.25);
+        transform: scale(0.25);
+        -webkit-transform-origin: top right;
+        transform-origin: top right;
+      }
+      .fa-layers-top-left {
+        left: 0;
+        right: auto;
+        top: 0;
+        -webkit-transform: scale(0.25);
+        transform: scale(0.25);
+        -webkit-transform-origin: top left;
+        transform-origin: top left;
+      }
+      .fa-lg {
+        font-size: 1.33333em;
+        line-height: 0.75em;
+        vertical-align: -0.0667em;
+      }
+      .fa-xs {
+        font-size: 0.75em;
+      }
+      .fa-sm {
+        font-size: 0.875em;
+      }
+      .fa-1x {
+        font-size: 1em;
+      }
+      .fa-2x {
+        font-size: 2em;
+      }
+      .fa-3x {
+        font-size: 3em;
+      }
+      .fa-4x {
+        font-size: 4em;
+      }
+      .fa-5x {
+        font-size: 5em;
+      }
+      .fa-6x {
+        font-size: 6em;
+      }
+      .fa-7x {
+        font-size: 7em;
+      }
+      .fa-8x {
+        font-size: 8em;
+      }
+      .fa-9x {
+        font-size: 9em;
+      }
+      .fa-10x {
+        font-size: 10em;
+      }
+      .fa-fw {
+        text-align: center;
+        width: 1.25em;
+      }
+      .fa-ul {
+        list-style-type: none;
+        margin-left: 2.5em;
+        padding-left: 0;
+      }
+      .fa-ul > li {
+        position: relative;
+      }
+      .fa-li {
+        left: -2em;
+        position: absolute;
+        text-align: center;
+        width: 2em;
+        line-height: inherit;
+      }
+      .fa-border {
+        border: solid 0.08em #eee;
+        border-radius: 0.1em;
+        padding: 0.2em 0.25em 0.15em;
+      }
+      .fa-pull-left {
+        float: left;
+      }
+      .fa-pull-right {
+        float: right;
+      }
+      .fa.fa-pull-left,
+      .fab.fa-pull-left,
+      .fal.fa-pull-left,
+      .far.fa-pull-left,
+      .fas.fa-pull-left {
+        margin-right: 0.3em;
+      }
+      .fa.fa-pull-right,
+      .fab.fa-pull-right,
+      .fal.fa-pull-right,
+      .far.fa-pull-right,
+      .fas.fa-pull-right {
+        margin-left: 0.3em;
+      }
+      .fa-spin {
+        -webkit-animation: fa-spin 2s infinite linear;
+        animation: fa-spin 2s infinite linear;
+      }
+      .fa-pulse {
+        -webkit-animation: fa-spin 1s infinite steps(8);
+        animation: fa-spin 1s infinite steps(8);
+      }
+      @-webkit-keyframes fa-spin {
+        0% {
+          -webkit-transform: rotate(0);
+          transform: rotate(0);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes fa-spin {
+        0% {
+          -webkit-transform: rotate(0);
+          transform: rotate(0);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      .fa-rotate-90 {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+      .fa-rotate-180 {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+      .fa-rotate-270 {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+      .fa-flip-horizontal {
+        -webkit-transform: scale(-1, 1);
+        transform: scale(-1, 1);
+      }
+      .fa-flip-vertical {
+        -webkit-transform: scale(1, -1);
+        transform: scale(1, -1);
+      }
+      .fa-flip-horizontal.fa-flip-vertical {
+        -webkit-transform: scale(-1, -1);
+        transform: scale(-1, -1);
+      }
+      :root .fa-flip-horizontal,
+      :root .fa-flip-vertical,
+      :root .fa-rotate-180,
+      :root .fa-rotate-270,
+      :root .fa-rotate-90 {
+        -webkit-filter: none;
+        filter: none;
+      }
+      .fa-stack {
+        display: inline-block;
+        height: 2em;
+        position: relative;
+        width: 2em;
+      }
+      .fa-stack-1x,
+      .fa-stack-2x {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .svg-inline--fa.fa-stack-1x {
+        height: 1em;
+        width: 1em;
+      }
+      .svg-inline--fa.fa-stack-2x {
+        height: 2em;
+        width: 2em;
+      }
+      .fa-inverse {
+        color: #fff;
+      }
+      .sr-only {
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+      .sr-only-focusable:active,
+      .sr-only-focusable:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+      }
+    </style>
+
+    <!-- Bootstrap Css -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/plugins/bootstrap-3.3.6/css/bootstrap.min.css' %}"
+    />
+    <!-- Bootstrap Select Css -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/plugins/bootstrap-select-1.10.0/dist/css/bootstrap-select.min.css' %}"
+    />
+    <!-- Fonts Css -->
+    <link
+      rel="stylesheet"
+      href="{% static 'static/assets/plugins/font-elegant/elegant.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'static/assets/plugins/font-awesome-4.6.1/css/font-awesome.min.css' %}"
+    />
+    <!-- OwlCarousel2 Slider Css -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/plugins/owl.carousel.2/assets/owl.carousel.css' %}"
+    />
+
+    <!-- Animate Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}" />
+
+    <!-- Main Css -->
+    <link rel="stylesheet" href="{% static 'assets/css/theme.css' %}" />
+  </head>
+  <body id="home">
+    <!-- Main Wrapper -->
+    <main class="wrapper">
+      <!-- Header -->
+      <header class="header-main">
+        <!-- Header Topbar -->
+        {% include "layouts/topbar.html" %}
+        <!-- /.Header Topbar -->
+
+        {% include "layouts/menu.html" %}
+      </header>
+      <!-- /.Header -->
+
+      <!-- Content Wrapper -->
+      <article>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+            <div class="login-wrap text-center">
+              <h2 class="title-3">Sign up</h2>
+
+              <div class="login-form clrbg-before">
+                <form class="signup" method="POST" action="/signup">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    {% render_field userForm.username %}
+                  </div>
+                  <div class="form-group">
+                    {% render_field infoForm.email class="form-control" required="true" placeholder="Email Address" %}
+                  </div>
+                  <div class="form-group">
+                    {% render_field infoForm.country class="form-control login-input" %}
+                  </div>
+                  <div class="form-group">
+                    {% render_field userForm.password class="form-control" %}
+                  </div>
+                  <div class="form-group">
+                    {% render_field infoForm.phone %}
+                  </div>
+
+                  <div class="form-group">
+                    <button class="btn-1" type="submit">Verifiy Email</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="create-accnt">
+            <h2 class="title-2">
+              <a
+                data-toggle="modal"
+                href="#login-popup"
+                id="login-btn1"
+                class="green-clr under-line"
+                >One clicl to Signup</a
+              >
+            </h2>
+          </div>
+        </div>
+      </article>
+      <!-- /.Content Wrapper -->
+
+      <!-- Footer -->
+      {% include "layouts/footer.html" %}
+      <!-- /.Footer -->
+    </main>
+    <!-- / Main Wrapper -->
+
+    <div class="to-top theme-clr-bg transition">
+      <i class="fa fa-angle-up"></i>
+    </div>
+
+    <!-- Main Jquery JS -->
+    <script
+      src="static/assets/js/jquery-2.2.4.min.js"
+      type="text/javascript"
+    ></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="static/assets/plugins/bootstrap-3.3.6/js/bootstrap.min.js"
+      type="text/javascript"
+    ></script>
+    <!-- Bootstrap Select JS -->
+    <script
+      src="static/assets/plugins/bootstrap-select-1.10.0/dist/js/bootstrap-select.min.js"
+      type="text/javascript"
+    ></script>
+    <!-- OwlCarousel2 Slider JS -->
+    <script
+      src="static/assets/plugins/owl.carousel.2/owl.carousel.min.js"
+      type="text/javascript"
+    ></script>
+    <!-- Sticky Header -->
+    <script src="static/assets/js/jquery.sticky.js"></script>
+    <!-- Wow JS -->
+    <script
+      src="static/assets/plugins/WOW-master/dist/wow.min.js"
+      type="text/javascript"
+    ></script>
+    <!-- Data binder -->
+    <script
+      src="static/assets/plugins/data.binder.js/data.binder.js"
+      type="text/javascript"
+    ></script>
+
+    <!-- Slider JS -->
+
+    <!-- Theme JS -->
+    <script src="static/assets/js/theme.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      // $("#register-btn").click(function(){
+      //     $("#login-popup").attributes.classList[1] = "hide";
+      // });
+      // $("#login-btn1").click(function(){
+      //     console.dir($("#login-popup").attributes.classList[1] = "show")
+      //     // $("#login-popup").show();
+      //     console.log("asdfasdfasdfasdfs")
+      // });
+
+      $("ul.dropdown-menu.inner li").click(function () {
+        var selectedText = $(this).find(".text").text();
+        $("select#shipping-options").val(selectedText);
+      });
+      $(
+        "#cal-length, #cal-width, #cal-height, #cal-weight, #cal-city, #cal-country, #cal-postal"
+      ).change(function () {
+        var ul_options_shipping = $("ul.dropdown-menu.inner");
+        ul_options_shipping.empty();
+        ul_options_shipping.append(
+          '<li><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Loading...</span><span class="glyphicon glyphicon-refresh glyphicon-spin"></span></a></li>'
+        );
+
+        var length = $("#cal-length").val();
+        var width = $("#cal-width").val();
+        var height = $("#cal-height").val();
+        var weight = $("#cal-weight").val();
+
+        var city = $("#cal-city").val();
+        var countryCode = $("#cal-country").val();
+        var postalCode = $("#cal-postal").val();
+
+        var SendInfo = {
+          warehouse: 1,
+          length: length,
+          width: width,
+          height: height,
+          weight: weight,
+          address: {
+            city: city,
+            stateCode: "",
+            countryCode: countryCode,
+            postalCode: postalCode,
+          },
+        };
+        if (
+          length.length &&
+          width.length &&
+          height.length &&
+          weight.length &&
+          postalCode.length &&
+          countryCode.length
+        ) {
+          $.ajax({
+            type: "post",
+            url: "/shipEstimate",
+            data: JSON.stringify(SendInfo),
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+              const dataObject = JSON.parse(data);
+              if (dataObject.success) {
+                var options =
+                  '<option class="bs-title-option" value="">select your package</option>';
+                $.each(dataObject.shippingOptions, function (index, option) {
+                  var rateWithMarkup = parseFloat(option.rateCustomer) * 1.3;
+                  options +=
+                    '<option value="' +
+                    rateWithMarkup +
+                    '">' +
+                    option.carrier +
+                    " - " +
+                    option.serviceName +
+                    " ($" +
+                    rateWithMarkup.toFixed(2) +
+                    ")</option>";
+                });
+                $("select#shipping-options").html(options);
+
+                ul_options_shipping.empty();
+                $.each(dataObject.shippingOptions, function (index, option) {
+                  var rateWithMarkup = parseFloat(option.rateCustomer) * 1.3;
+                  var li =
+                    '<li data-original-index="' +
+                    (index + 1) +
+                    '"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">' +
+                    option.carrier +
+                    " - " +
+                    option.serviceName +
+                    " ($" +
+                    rateWithMarkup.toFixed(2) +
+                    ')</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li>';
+                  ul_options_shipping.append(li);
+                });
+              }
+            },
+            error: function (xhr, status, error) {
+              if (xhr.status === 400) {
+                var response = xhr.responseJSON;
+                if (response && response.serverMessage) {
+                  $("#error-message").html(response.serverMessage);
+                  $("#error-message").show();
+                  ul_options_shipping.empty();
+                  ul_options_shipping.append(
+                    '<li><span class="text">' +
+                      response.serverMessage +
+                      '</span><span class="glyphicon glyphicon-remove cross-mark"></span></li>'
+                  );
+                }
+              }
+            },
+          });
+        }
+      });
+    </script>
+    <link href="/static/css/2.ed2b7737.chunk.css" rel="stylesheet" />
+    <link href="/static/css/main.9553ed0d.chunk.css" rel="stylesheet" />
+  </body>
+</html>
